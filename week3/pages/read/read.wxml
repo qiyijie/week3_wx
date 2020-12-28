@@ -1,0 +1,35 @@
+<!--pages/read/read.wxml-->
+
+<view class="box1">
+     <view class="box-top">
+          <image src="{{content.image}}" class="image1"></image>
+     </view>
+     <view class="box-bottom">
+          <view class="title" bind:tap='read' data-index="{{item.id}}">{{content.title}}</view>
+          <view>★★★★★{{content.grade}}</view>
+          <view>总评论数：{{content.count}}</view>
+     </view>
+</view>
+<view>
+     <button open-type="share">转发</button>
+</view>
+
+<!-- 写评论 -->
+<view>
+
+     <view>
+          写评论
+     </view>
+     <form form-type="submit" bindsubmit='submit' >
+          <input type="text" name='comment' placeholder="请输入想要说的话" />
+          <button form-type="submit" >提交</button>
+     </form>
+    
+
+
+     <view>评论内容是：</view>
+     <block wx:for="{{comment}}" wx:key='keys'>
+          <view>{{item.comment}}</view>
+     </block>
+    
+</view>

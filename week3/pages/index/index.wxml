@@ -1,0 +1,30 @@
+
+
+  <view class="body">
+    <!-- 上方标题 -->
+      <view class="top">
+          <view class="top-left">
+            影院热映
+          </view>
+          <view class="top-right">查看更多》</view>
+      </view>
+      <scroll-view scroll-x="{{true}}">
+        <view class="box">
+        <block wx:for="{{content}}" wx:key='keys'>
+        <view class="box1">  
+          <view class="box-top">
+          <image src="{{item.image}}" class="image1"></image>
+        </view>
+        <view class="box-bottom">
+          <view class="title" bind:tap='read' data-index="{{item.id}}">{{item.title}}</view>
+          <view>★★★★★{{item.grade}}</view>
+        </view>
+        </view>
+      </block>
+      </view>
+      </scroll-view>
+      <!-- 下面div  -->
+    
+  </view>
+
+  
